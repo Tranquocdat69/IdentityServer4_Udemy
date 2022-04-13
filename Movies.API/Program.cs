@@ -4,8 +4,6 @@ using Movies.API.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
 builder.Services.AddControllers();
 
 builder.Services.AddDbContext<MoviesAPIContext>(options =>
@@ -23,7 +21,14 @@ builder.Services.AddAuthentication("Beaer")
         };
     });
 
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("CheckClientId", options =>
+    {
+        options.RequireClaim("client_id", "movieClient");
+    });
+});
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -40,7 +45,6 @@ void SeedDatabase()
 
 SeedDatabase();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();

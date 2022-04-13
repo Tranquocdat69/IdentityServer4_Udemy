@@ -11,7 +11,7 @@ namespace Movies.API.Controllers
         [HttpGet]
         public IActionResult GetClaims()
         {
-            return Ok(new { User.Claims });
+            return Ok(User.Claims);
         }
     }
 }
