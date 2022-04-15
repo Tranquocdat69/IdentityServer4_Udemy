@@ -21,12 +21,18 @@ namespace IdentityServer
                    AllowedGrantTypes = GrantTypes.ClientCredentials,
                    AllowedScopes = {"movieAPI"}
                },
-                   new Client
-                   {
+               new Client
+               {
                        ClientId = "movies_mvc_client",
+                       ClientSecrets = new List<Secret>
+                       {
+                           new Secret("secret".Sha256())
+                       },
                        ClientName = "Movies MVC Web App",
+
                        AllowedGrantTypes = GrantTypes.Code,
                        AllowRememberConsent = false,
+
                        RedirectUris = new List<string>()
                        {
                            "https://localhost:5002/signin-oidc"
@@ -35,16 +41,12 @@ namespace IdentityServer
                        {
                            "https://localhost:5002/signout-callback-oidc"
                        },
-                       ClientSecrets = new List<Secret>
-                       {
-                           new Secret("secret".Sha256())
-                       },
                        AllowedScopes = new List<string>
                        {
                            IdentityServerConstants.StandardScopes.OpenId,
                            IdentityServerConstants.StandardScopes.Profile
                        }
-                   }
+               }
            };
 
         public static IEnumerable<ApiScope> ApiScopes =>

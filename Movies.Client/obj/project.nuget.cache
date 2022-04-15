@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "eKmQVoJ0r8GVEePpXrk7S7UWq0CrA8WHRgU39alVZDK65FfS0uElmQCt74ePgY3+1aHaMPmfIQ8z7d5CeLpj9w==",
+  "dgSpecHash": "eVp3yZE3fcM58ED8bq4TImgCnuuN5eNIh9tODMrYZ46A3CTw2bc3qRNowNg+0YrDNs/5XCoq+LUZtniX+hrsbw==",
   "success": true,
   "projectFilePath": "C:\\Workspace\\.NET_Core\\6.0\\SecureMicroservices\\Movies.Client\\Movies.Client.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\FITTHUCTAP20\\.nuget\\packages\\humanizer.core\\2.2.0\\humanizer.core.2.2.0.nupkg.sha512",
+    "C:\\Users\\FITTHUCTAP20\\.nuget\\packages\\identitymodel\\6.0.0\\identitymodel.6.0.0.nupkg.sha512",
     "C:\\Users\\FITTHUCTAP20\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
     "C:\\Users\\FITTHUCTAP20\\.nuget\\packages\\messagepack.annotations\\2.1.152\\messagepack.annotations.2.1.152.nupkg.sha512",
     "C:\\Users\\FITTHUCTAP20\\.nuget\\packages\\messagepackanalyzer\\2.1.152\\messagepackanalyzer.2.1.152.nupkg.sha512",

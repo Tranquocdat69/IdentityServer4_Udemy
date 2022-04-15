@@ -237,3 +237,4 @@ C:\Workspace\.NET_Core\6.0\SecureMicroservices\Movies.Client\bin\Debug\net6.0\Mi
 C:\Workspace\.NET_Core\6.0\SecureMicroservices\Movies.Client\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Workspace\.NET_Core\6.0\SecureMicroservices\Movies.Client\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
 C:\Workspace\.NET_Core\6.0\SecureMicroservices\Movies.Client\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Workspace\.NET_Core\6.0\SecureMicroservices\Movies.Client\bin\Debug\net6.0\IdentityModel.dll

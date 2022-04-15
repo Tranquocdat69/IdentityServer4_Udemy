@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Protocols.OpenIdConnect;
@@ -34,7 +36,9 @@ namespace Movies.Client.Controllers
         public async Task LogTokenAndClaims()
         {
             var identityToken = await HttpContext.GetTokenAsync(OpenIdConnectParameterNames.IdToken);
+            var accessToken = await HttpContext.GetTokenAsync(OpenIdConnectParameterNames.AccessToken);
             Debug.WriteLine($"Identity token: { identityToken }");
+            Debug.WriteLine($"Access token: { accessToken }");
             foreach (var claim in User.Claims)
             {
                 Debug.WriteLine(claim.Type + " - "+ claim.Value);
@@ -85,6 +89,12 @@ namespace Movies.Client.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             return RedirectToAction(nameof(Index));
+        }
+
+        public async Task Logout()
+        {
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            await HttpContext.SignOutAsync(OpenIdConnectDefaults.AuthenticationScheme);
         }
 
         private bool MovieExists(int id)
